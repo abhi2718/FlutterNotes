@@ -9,16 +9,18 @@ class TransationList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ...transations.map((item) {
-                return (Container(
-                  child: Card(
+        Container(
+          height:600,
+          child:ListView.builder(
+          itemBuilder: (context, index) {
+            return ( Card(
                     child: Container(
                       padding: const EdgeInsets.all(20),
                       child: Row(
                         children: [
                           Container(
                               child: Text(
-                                item.amount.toString(),
+                                transations[index].amount.toString(),
                                 style: const TextStyle(
                                   color: Colors.purple,
                                   fontWeight: FontWeight.bold,
@@ -34,12 +36,12 @@ class TransationList extends StatelessWidget {
                               margin: const EdgeInsets.all(10),
                               child: Column(
                                 children: [
-                                  Text(item.title,
+                                  Text( transations[index].title,
                                       style: const TextStyle(
                                         fontWeight: FontWeight.bold,
                                         fontSize: 16,
                                       )),
-                                  Text(DateFormat.yMEd().format(item.date),
+                                  Text(DateFormat.yMEd().format(transations[index].date),
                                       style: const TextStyle(color: Colors.grey)),
                                 ],
                               )),
@@ -48,9 +50,11 @@ class TransationList extends StatelessWidget {
                       ),
                       width: double.infinity,
                     ),
-                  ),
-                ));
-              })
+                  ));
+          },
+          itemCount: transations.length,
+        ),
+        )
       ],
     );
   }

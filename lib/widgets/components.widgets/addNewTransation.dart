@@ -33,10 +33,18 @@ class AddNewTransition extends StatelessWidget {
             child: RaisedButton(
               child: Text("Add Transation"),
               onPressed: () {
+                if (titleController.text.isEmpty || amountController.text.isEmpty) {
+                  return;
+                }
+                double amount = double.parse(amountController.text);
+                String title = titleController.text;
+                if(amount<=0){
+                  return;
+                }
                 _addNewTransation(
                   DateTime.now().toString(),
-                  titleController.text,
-                  double.parse(amountController.text),
+                  title,
+                  amount,
                   DateTime.now(),
                 );
               },
