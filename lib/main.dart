@@ -6,11 +6,28 @@ import './models/transation.dart';
 import './widgets/components.widgets/addNewTransation.dart';
 
 void main() => runApp(
-    MediaQuery(data: const MediaQueryData(), child: MaterialApp(home: _App())));
+    MediaQuery(data: const MediaQueryData(), child: MaterialApp(
+      home: _App(),
+      theme:ThemeData(
+        primarySwatch:Colors.purple,
+        accentColor: Colors.amber,
+        fontFamily:"Quicksand",
+        textTheme: ThemeData().textTheme.copyWith(labelMedium:const TextStyle(
+          fontFamily:"OpenSans",
+           fontSize:16,
+        )),
+        appBarTheme: const AppBarTheme(
+         titleTextStyle:TextStyle(
+           fontFamily:"OpenSans",
+           fontSize:20,
+         )
+        )
+      ),
+    )));
 
 class _App extends StatefulWidget {
   @override
-  State<_App> createState() {
+  _AppState createState() {
     return _AppState();
   }
 }
@@ -50,12 +67,12 @@ class _AppState extends State<_App> {
                       controller: titleController,
                       keyboardType: TextInputType.text,
                       decoration: const InputDecoration(
-                          labelText: "Title", hintText: "Buy SIM .")),
+                          labelText: "Title", hintText: "")),
                   TextField(
                     keyboardType: TextInputType.number,
                     controller: amountController,
                     decoration: const InputDecoration(
-                        labelText: "Amount", hintText: "500.50"),
+                        labelText: "Amount", hintText: ""),
                   ),
                   Container(
                     padding: const EdgeInsets.only(top: 10),
@@ -64,8 +81,8 @@ class _AppState extends State<_App> {
                       onPressed: () {
                         if (amountController.text == '') {
                           amount = 0;
-                        }else{
-                           amount = double.parse(amountController.text);
+                        } else {
+                          amount = double.parse(amountController.text);
                         }
                         title = titleController.text;
                         if (title == '') {
@@ -83,6 +100,7 @@ class _AppState extends State<_App> {
                         );
                         amountController.text = '';
                         titleController.text = '';
+                        Navigator.of(ctx).pop();
                       },
                     ),
                   )

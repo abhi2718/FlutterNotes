@@ -37,10 +37,8 @@ class TransationList extends StatelessWidget {
                               child: Column(
                                 children: [
                                   Text( transations[index].title,
-                                      style: const TextStyle(
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 16,
-                                      )),
+                                      style:Theme.of(context).textTheme.labelMedium
+                                      ),
                                   Text(DateFormat.yMEd().format(transations[index].date),
                                       style: const TextStyle(color: Colors.grey)),
                                 ],
