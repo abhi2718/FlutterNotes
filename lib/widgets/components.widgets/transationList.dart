@@ -11,7 +11,11 @@ class TransationList extends StatelessWidget {
       children: [
         Container(
           height:600,
-          child:ListView.builder(
+          child:transations.isEmpty?Image.asset(
+          'assets/images/coin.jpg',
+          fit:BoxFit.fill,
+          ):
+          ListView.builder(
           itemBuilder: (context, index) {
             return ( Card(
                     child: Container(
