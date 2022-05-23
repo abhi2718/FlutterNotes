@@ -4,25 +4,28 @@ import 'package:flutter/material.dart';
 import './widgets/screen.widgets/homeScreen.dart';
 import './models/transation.dart';
 import './widgets/components.widgets/addNewTransation.dart';
+import './notes/stack.dart';
+import './notes/sizedBox.dart';
+import './notes/fractionalSizedBox.dart';
 
-void main() => runApp(
-    MediaQuery(data: const MediaQueryData(), child: MaterialApp(
+void main() => runApp(MediaQuery(
+    data: const MediaQueryData(),
+    child: MaterialApp(
       home: _App(),
-      theme:ThemeData(
-        primarySwatch:Colors.purple,
-        accentColor: Colors.amber,
-        fontFamily:"Quicksand",
-        textTheme: ThemeData().textTheme.copyWith(labelMedium:const TextStyle(
-          fontFamily:"OpenSans",
-           fontSize:16,
-        )),
-        appBarTheme: const AppBarTheme(
-         titleTextStyle:TextStyle(
-           fontFamily:"OpenSans",
-           fontSize:20,
-         )
-        )
-      ),
+      theme: ThemeData(
+          primarySwatch: Colors.purple,
+          accentColor: Colors.amber,
+          fontFamily: "Quicksand",
+          textTheme: ThemeData().textTheme.copyWith(
+                  labelMedium: const TextStyle(
+                fontFamily: "OpenSans",
+                fontSize: 16,
+              )),
+          appBarTheme: const AppBarTheme(
+              titleTextStyle: TextStyle(
+            fontFamily: "OpenSans",
+            fontSize: 20,
+          ))),
     )));
 
 class _App extends StatefulWidget {
@@ -128,7 +131,10 @@ class _AppState extends State<_App> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HomeScreen(transations: _transations),
+            // HomeScreen(transations: _transations),
+            //MyStack(),
+            //MySizedBox(),
+             MyFractionallySizedBox()
             //AddNewTransition(_addNewTransation),
           ],
         ),
