@@ -7,6 +7,10 @@ import './widgets/components.widgets/addNewTransation.dart';
 import './notes/stack.dart';
 import './notes/sizedBox.dart';
 import './notes/fractionalSizedBox.dart';
+import './notes/flexible.dart';
+import './notes/expand.dart';
+import './notes/fittedBox.dart';
+import './notes/listTile.dart';
 
 void main() => runApp(MediaQuery(
     data: const MediaQueryData(),
@@ -134,8 +138,12 @@ class _AppState extends State<_App> {
             // HomeScreen(transations: _transations),
             //MyStack(),
             //MySizedBox(),
-             MyFractionallySizedBox()
+            // MyFractionallySizedBox()
             //AddNewTransition(_addNewTransation),
+            // MyFlexibleBox(),
+            // MyExpand(),
+            //MyFittedBox(),
+            MyListTile()
           ],
         ),
       ),
