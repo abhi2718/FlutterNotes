@@ -1,6 +1,7 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './widgets/screen.widgets/homeScreen.dart';
 import './models/transation.dart';
 import './widgets/components.widgets/addNewTransation.dart';
@@ -11,8 +12,10 @@ import './notes/flexible.dart';
 import './notes/expand.dart';
 import './notes/fittedBox.dart';
 import './notes/listTile.dart';
+import './notes/responsiveDesign/deviceSize.dart';
 
-void main() => runApp(MediaQuery(
+void main() =>{
+   runApp(MediaQuery(
     data: const MediaQueryData(),
     child: MaterialApp(
       home: _App(),
@@ -30,7 +33,8 @@ void main() => runApp(MediaQuery(
             fontFamily: "OpenSans",
             fontSize: 20,
           ))),
-    )));
+    )))
+};
 
 class _App extends StatefulWidget {
   @override
@@ -143,7 +147,8 @@ class _AppState extends State<_App> {
             // MyFlexibleBox(),
             // MyExpand(),
             //MyFittedBox(),
-            MyListTile()
+            //MyListTile(),
+            ResponsiveDesign()
           ],
         ),
       ),
