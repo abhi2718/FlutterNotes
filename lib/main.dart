@@ -13,28 +13,30 @@ import './notes/expand.dart';
 import './notes/fittedBox.dart';
 import './notes/listTile.dart';
 import './notes/responsiveDesign/deviceSize.dart';
+import './notes/responsiveDesign/orientation.dart';
+import './notes/lifecycleMethods.dart';
 
-void main() =>{
-   runApp(MediaQuery(
-    data: const MediaQueryData(),
-    child: MaterialApp(
-      home: _App(),
-      theme: ThemeData(
-          primarySwatch: Colors.purple,
-          accentColor: Colors.amber,
-          fontFamily: "Quicksand",
-          textTheme: ThemeData().textTheme.copyWith(
-                  labelMedium: const TextStyle(
-                fontFamily: "OpenSans",
-                fontSize: 16,
-              )),
-          appBarTheme: const AppBarTheme(
-              titleTextStyle: TextStyle(
-            fontFamily: "OpenSans",
-            fontSize: 20,
-          ))),
-    )))
-};
+void main() => {
+      runApp(MediaQuery(
+          data: const MediaQueryData(),
+          child: MaterialApp(
+            home: _App(),
+            theme: ThemeData(
+                primarySwatch: Colors.purple,
+                accentColor: Colors.amber,
+                fontFamily: "Quicksand",
+                textTheme: ThemeData().textTheme.copyWith(
+                        labelMedium: const TextStyle(
+                      fontFamily: "OpenSans",
+                      fontSize: 16,
+                    )),
+                appBarTheme: const AppBarTheme(
+                    titleTextStyle: TextStyle(
+                  fontFamily: "OpenSans",
+                  fontSize: 20,
+                ))),
+          )))
+    };
 
 class _App extends StatefulWidget {
   @override
@@ -148,7 +150,9 @@ class _AppState extends State<_App> {
             // MyExpand(),
             //MyFittedBox(),
             //MyListTile(),
-            ResponsiveDesign()
+            //ResponsiveDesign(),
+            // MyDeviceOrientation(),
+            WidgetLifeCycle(1),
           ],
         ),
       ),
