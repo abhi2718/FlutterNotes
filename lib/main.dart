@@ -1,29 +1,42 @@
 // ignore_for_file: deprecated_member_use
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import './widgets/screen.widgets/homeScreen.dart';
 import './models/transation.dart';
 import './widgets/components.widgets/addNewTransation.dart';
+import './notes/stack.dart';
+import './notes/sizedBox.dart';
+import './notes/fractionalSizedBox.dart';
+import './notes/flexible.dart';
+import './notes/expand.dart';
+import './notes/fittedBox.dart';
+import './notes/listTile.dart';
+import './notes/responsiveDesign/deviceSize.dart';
+import './notes/responsiveDesign/orientation.dart';
+import './notes/lifecycleMethods.dart';
 
-void main() => runApp(
-    MediaQuery(data: const MediaQueryData(), child: MaterialApp(
-      home: _App(),
-      theme:ThemeData(
-        primarySwatch:Colors.purple,
-        accentColor: Colors.amber,
-        fontFamily:"Quicksand",
-        textTheme: ThemeData().textTheme.copyWith(labelMedium:const TextStyle(
-          fontFamily:"OpenSans",
-           fontSize:16,
-        )),
-        appBarTheme: const AppBarTheme(
-         titleTextStyle:TextStyle(
-           fontFamily:"OpenSans",
-           fontSize:20,
-         )
-        )
-      ),
-    )));
+void main() => {
+      runApp(MediaQuery(
+          data: const MediaQueryData(),
+          child: MaterialApp(
+            home: _App(),
+            theme: ThemeData(
+                primarySwatch: Colors.purple,
+                accentColor: Colors.amber,
+                fontFamily: "Quicksand",
+                textTheme: ThemeData().textTheme.copyWith(
+                        labelMedium: const TextStyle(
+                      fontFamily: "OpenSans",
+                      fontSize: 16,
+                    )),
+                appBarTheme: const AppBarTheme(
+                    titleTextStyle: TextStyle(
+                  fontFamily: "OpenSans",
+                  fontSize: 20,
+                ))),
+          )))
+    };
 
 class _App extends StatefulWidget {
   @override
@@ -128,8 +141,18 @@ class _AppState extends State<_App> {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            HomeScreen(transations: _transations),
+            // HomeScreen(transations: _transations),
+            //MyStack(),
+            //MySizedBox(),
+            // MyFractionallySizedBox()
             //AddNewTransition(_addNewTransation),
+            // MyFlexibleBox(),
+            // MyExpand(),
+            //MyFittedBox(),
+            //MyListTile(),
+            //ResponsiveDesign(),
+            // MyDeviceOrientation(),
+            WidgetLifeCycle(1),
           ],
         ),
       ),
